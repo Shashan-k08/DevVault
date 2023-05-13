@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import bgImg from '../img/img1.jpg';
 const SignUp = (props) => {
     const [credentials, setcredentials] = useState({ name: "", email: "", password: "" })
     const host ="https://note-me-backend.onrender.com";
@@ -36,28 +37,28 @@ const SignUp = (props) => {
 
     return (
         <div className='conatiner'>
-            <form onSubmit={handleSubmit}>
+            <section>
+        <div className="register">
+            <div className="col-1">
+                <h2>Sign In</h2>
+                <span>register and enjoy the service</span>
 
-                <div className="mb-3 my-3">
-                    <label htmlFor="name" className="form-label">Name</label>
-                    <input type="text" className="form-control" name='name' id="name" onChange={onchange} minLength={3} required aria-describedby="emailHelp" />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" className="form-control" name='email' onChange={onchange} required id="email" aria-describedby="emailHelp" />
-                    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" className="form-control" onChange={onchange} minLength={5} required name='password' id="password" />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="cpassword" className="form-label">Confirm Password</label>
-                    <input type="password" className="form-control" onChange={onchange} name='cpassword' id="cpassword" />
-                </div>
+                <form id='form' className='flex flex-col' >
+                    <input type="text"  placeholder='username' />
+                    <input type="text"  placeholder='password' />
+                    <input type="text"  placeholder='confirm password' />
+                    <input type="text"  placeholder='mobile number' />
+                   
+                   
+                    <button className='btn1'>Sign In</button>
+                </form>
 
-                <button type="submit" className="btn btn-primary">SignUp</button>
-            </form>
+            </div>
+            <div className="col-2">
+                <img src={bgImg} alt="" />
+            </div>
+        </div>
+    </section>
         </div>
     )
 }
