@@ -126,20 +126,38 @@
   display: none;
 }
 
-@media screen and (min-width: 860px)  {
+@media screen and (max-width: 860px)  {
   .register .col-2 img{
     display: initial;
+  }
+  .img-box{
+    display:none;
+  }
+}
+
+@media (min-width:860px) {
+  .form-box{
+    width: 46vh;
   }
 }
 
 .signup-box{
-
+  margin-top: 5rem;
+  margin-bottom: 9rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .signup-box1{
-
+}
+.form-box{
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  padding: 1rem;
+  margin: 1rem;
+  height: 45vh;
+  
 }
 
-.img-box{
-  
+.img-box img{
+  background-size: cover;
+  transform: scale(.7);
 }

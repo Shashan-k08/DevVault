@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import loginimg from '../img/virtual-reality 1.jpg'
 const SignUp = (props) => {
     const [credentials, setcredentials] = useState({ name: "", email: "", password: "" })
     const host = "https://note-me-backend.onrender.com";
@@ -36,19 +37,23 @@ const SignUp = (props) => {
 
     return (
         <div className='conatiner fl-c'>
+            <div className="signup-box">
+           
+           <div className="signup-box1 fl-r">
+            <img className="img-box"  src={loginimg} alt=""/>
             <form className='form-box'>
                 <div class="form-outline mb-4">
                     <input type="email" id="form1Example1" class="form-control" />
                     <label class="form-label" for="form1Example1">Email address</label>
                 </div>
-
-
                 <div class="form-outline mb-4">
                     <input type="password" id="form1Example2" class="form-control" />
                     <label class="form-label" for="form1Example2">Password</label>
                 </div>
-
-
+                <div class="form-outline mb-4">
+                    <input type="password" id="form1Example2" class="form-control" />
+                    <label class="form-label" for="form1Example2"> Confirm Password</label>
+                </div>
                 <div class="row mb-4">
                     <div class="col d-flex justify-content-center">
 
@@ -67,6 +72,8 @@ const SignUp = (props) => {
 
                 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
             </form>
+            </div>
+            </div>
         </div>
     )
 }
