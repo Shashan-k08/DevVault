@@ -1,10 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import bgImg from '../img/img1.jpg';
 const SignUp = (props) => {
     const [credentials, setcredentials] = useState({ name: "", email: "", password: "" })
-    const host ="https://note-me-backend.onrender.com";
+    const host = "https://note-me-backend.onrender.com";
     let navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -36,29 +35,38 @@ const SignUp = (props) => {
 
 
     return (
-        <div className='conatiner'>
-            <section>
-        <div className="register">
-            <div className="col-1">
-                <h2>Sign In</h2>
-                <span>register and enjoy the service</span>
+        <div className='conatiner fl-c'>
+            <form className='form-box'>
+                <div class="form-outline mb-4">
+                    <input type="email" id="form1Example1" class="form-control" />
+                    <label class="form-label" for="form1Example1">Email address</label>
+                </div>
 
-                <form id='form' className='flex flex-col' >
-                    <input type="text"  placeholder='username' />
-                    <input type="text"  placeholder='password' />
-                    <input type="text"  placeholder='confirm password' />
-                    <input type="text"  placeholder='mobile number' />
-                   
-                   
-                    <button className='btn1'>Sign In</button>
-                </form>
 
-            </div>
-            <div className="col-2">
-                <img src={bgImg} alt="" />
-            </div>
-        </div>
-    </section>
+                <div class="form-outline mb-4">
+                    <input type="password" id="form1Example2" class="form-control" />
+                    <label class="form-label" for="form1Example2">Password</label>
+                </div>
+
+
+                <div class="row mb-4">
+                    <div class="col d-flex justify-content-center">
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                            <label class="form-check-label" for="form1Example3"> Remember me </label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+
+                        <a href="#!">Forgot password?</a>
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+            </form>
         </div>
     )
 }
