@@ -41,11 +41,11 @@ const Login = (props) => {
     }
     return (
         <div className='conatiner fl-c'>
-            <div className="signup-box">
+            <div className="login-box">
            
            <div className="signup-box1 fl-r">
             <img className="img-box"  src={loginimg} alt=""/>
-            <form className='form-box fl-c'>
+            <form className='loginform-box fl-c'>
                 <h4>Login</h4>
                
                 <div class="form-outline mb-4">
@@ -73,7 +73,7 @@ const Login = (props) => {
                 </div>
 
 
-                <button type="submit" onClick={handleSubmit} class="btn btn-primary btn-block">Sign Up</button>
+                <button type="submit" onClick={handleSubmit} class="btn btn-primary btn-block">Login</button>
                 <p onClick={movesign}>Already Have an account? <span onClick={movesign}> Sign-Up </span> </p>
                 </form>
             </div>

@@ -79,7 +79,7 @@ const movelog =()=>{
 
 
                 <button type="submit" onClick={handleSubmit} class="btn btn-primary btn-block">Sign Up</button>
-                <p onClick={movelog}>Already Have an account? <span onClick={movelog}> Sign-Up </span> </p>
+                <p onClick={movelog}>Already Have an account? <span onClick={movelog}>Login </span> </p>
                 </form>
             </div>
             </div>
