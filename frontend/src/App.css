@@ -203,3 +203,13 @@
 .navupd{
   padding-left: 66vw !important;
 }
+
+.navtag{
+  background-image:aliceblue !important ;
+}
+
+@media (max-width:1000px) {
+  .navupd{
+    padding-left: 0vw !important;
+  }
+}
