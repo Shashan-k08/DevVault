@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import loginimg from '../img/virtual-reality 1.jpg'
 const Login = (props) => {
   const host ="https://note-me-backend.onrender.com";
     const [credentials, setcredentials] = useState({ email: "", password: "" })
@@ -34,21 +35,49 @@ const Login = (props) => {
     const onChange = (e) => {
         setcredentials({ ...credentials, [e.target.name]: e.target.value })
     }
+
+    const movesign=()=>{
+        navigate('/signup')
+    }
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                    <input type="email" className="form-control" value={credentials.email} onChange={onChange} name='email' id="email" aria-describedby="emailHelp" />
-                    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+        <div className='conatiner fl-c'>
+            <div className="signup-box">
+           
+           <div className="signup-box1 fl-r">
+            <img className="img-box"  src={loginimg} alt=""/>
+            <form className='form-box fl-c'>
+                <h4>Login</h4>
+               
+                <div class="form-outline mb-4">
+                    <input type="email" name="email" id="form1Example1" onChange={onChange} class="form-control" />
+                    <label class="form-label" for="form1Example1">Email address</label>
                 </div>
-                <div className="mb-3">
-                    <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" className="form-control" value={credentials.password} onChange={onChange} name='password' id="password" />
+                <div class="form-outline mb-4">
+                    <input type="password" name="password" id="form1Example2" onChange={onChange} class="form-control" />
+                    <label class="form-label" for="form1Example2">Password</label>
+                </div>
+              
+                <div class="row mb-4">
+                    <div class="col d-flex justify-content-center">
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                            <label class="form-check-label" for="form1Example3"> Remember me </label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+
+                        <a href="#!">Forgot password?</a>
+                    </div>
                 </div>
 
-                <button type="submit" className="btn btn-primary" >Submit</button>
-            </form>
+
+                <button type="submit" onClick={handleSubmit} class="btn btn-primary btn-block">Sign Up</button>
+                <p onClick={movesign}>Already Have an account? <span onClick={movesign}> Sign-Up </span> </p>
+                </form>
+            </div>
+            </div>
         </div>
     )
 }

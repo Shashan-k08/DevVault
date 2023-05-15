@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import loginimg from '../img/virtual-reality 1.jpg'
+
 const SignUp = (props) => {
     const [credentials, setcredentials] = useState({ name: "", email: "", password: "" })
     const host = "https://note-me-backend.onrender.com";
@@ -33,7 +34,9 @@ const SignUp = (props) => {
         setcredentials({ ...credentials, [e.target.name]: e.target.value })
     }
 
-
+const movelog =()=>{
+    navigate('/login');
+}
 
     return (
         <div className='conatiner fl-c'>
@@ -41,18 +44,23 @@ const SignUp = (props) => {
            
            <div className="signup-box1 fl-r">
             <img className="img-box"  src={loginimg} alt=""/>
-            <form className='form-box'>
+            <form className='form-box fl-c'>
+                <h4>Sign-Up</h4>
                 <div class="form-outline mb-4">
-                    <input type="email" id="form1Example1" class="form-control" />
+                    <input type='text' name='name' id="form4Example1" onChange={onchange} value={credentials.name} class="form-control" />
+                    <label class="form-label" htmlFor="form4Example1">Full Name</label>
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="email" name="email" id="form1Example1" onChange={onchange} class="form-control" />
                     <label class="form-label" for="form1Example1">Email address</label>
                 </div>
                 <div class="form-outline mb-4">
-                    <input type="password" id="form1Example2" class="form-control" />
+                    <input type="password" name="password" id="form1Example2" onChange={onchange} class="form-control" />
                     <label class="form-label" for="form1Example2">Password</label>
                 </div>
                 <div class="form-outline mb-4">
-                    <input type="password" id="form1Example2" class="form-control" />
-                    <label class="form-label" for="form1Example2"> Confirm Password</label>
+                    <input type="password" name="cpassword" id="form2Example2" class="form-control" />
+                    <label class="form-label" for="form2Example2"> Confirm Password</label>
                 </div>
                 <div class="row mb-4">
                     <div class="col d-flex justify-content-center">
@@ -70,8 +78,9 @@ const SignUp = (props) => {
                 </div>
 
 
-                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-            </form>
+                <button type="submit" onClick={handleSubmit} class="btn btn-primary btn-block">Sign Up</button>
+                <p onClick={movelog}>Already Have an account? <span onClick={movelog}> Sign-Up </span> </p>
+                </form>
             </div>
             </div>
         </div>
