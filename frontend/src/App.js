@@ -14,6 +14,7 @@ import Alert from './Components/Alert';
 import Login from './Components/Login';
 import SignUp from './Components/SignUp';
 import { useState } from 'react';
+import Footer from './Components/Footer';
 
 function App() {
   const [alert, setalert] = useState(null);
@@ -39,10 +40,12 @@ function App() {
               <Route exact path='/about' element={<About />} />
               <Route exact path='/login' element={<Login showalert={showalert} />} />
               <Route exact path='/signup' element={<SignUp showalert={showalert} />} />
+              <Route exact path='/footer' element={<Footer showalert={showalert} />} />
 
             </Routes>
           </div>
         </Router>
+        <Footer/>
       </NoteState>
       </div>
     </>

@@ -213,3 +213,8 @@
     padding-left: 0vw !important;
   }
 }
+.foot-c{
+  position: absolute;
+  width: 100%;
+  bottom: 0%;
+}
