@@ -11,13 +11,17 @@ const Home = (props) => {
   // }
  
   return (
-  
-    <div>
-    
+    <div className='fl-c box-wrapper'>
+    <h6>Tap to Add or View Notes</h6>
+    <div className='fl-r button-box'>
+     
+    <div className="add-box"> <button>Add Notes</button></div>
+    <div className="view-box"> <button>View Notes</button></div>
        
-       <Notes showalert={props.showalert} />
+       {/* <Notes showalert={props.showalert} /> */}
    
 
+    </div>
     </div>
   )
 }
