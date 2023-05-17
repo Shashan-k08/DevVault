@@ -16,8 +16,8 @@ const Footer = () => {
         <form action=''>
           <MDBRow className='d-flex justify-content-center'>
             <MDBCol size='auto' className='mb-4 mb-md-0'>
-              <p className='pt-2'>
-                <strong>Sign up for our newsletter</strong>
+              <p className='pt-2' style={{color:'#807979'}}>
+                <strong>Subscribe for Alerts</strong>
               </p>
             </MDBCol>
 
@@ -94,9 +94,9 @@ const Footer = () => {
       </MDBContainer>
 
       <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        © 2020 Copyright:
+        © 2023 Copyright:
         <a className='text-white' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
+          iNotebook.com
         </a>
       </div>
     </MDBFooter>

@@ -36,10 +36,8 @@ body::-webkit-scrollbar {
   font-family: sans-serif;
   margin: 3rem;
   font-size: 1.2rem;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   padding: 1rem;
-  background: #d6dbde;
-  border-radius: 3rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -178,7 +176,9 @@ body::-webkit-scrollbar {
 }
 
 .navupd{
-  padding-left: 66vw !important;
+  padding-left: 46vw !important;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .navtag{
@@ -195,17 +195,22 @@ body::-webkit-scrollbar {
   /* .add-box,.view-box{
     margin: 0px;
   } */
+  .containerd{
+    width: 90vw !important;
+    
+  }
   .button-box{
     margin-top: 1rem;
   }
   .foot-c{
-    position: static;
+    position: static !important ;
   }
 }
 .foot-c{
-   position: absolute; 
+ 
   width: 100%;
-  bottom: 0%;
+position: absolute;
+bottom: 0%;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -262,9 +267,14 @@ body::-webkit-scrollbar {
   /* margin-top: .7rem; */
 }
 
+.container{
+  overflow: scroll;
+}
 .containerd{
   height: 53vh;
-  width: 42vw;
+  width: 43vw;
+  margin-top: 2rem !important;
+  margin-bottom: 3rem !important;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 

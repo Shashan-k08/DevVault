@@ -23,10 +23,16 @@ const Navbar=()=> {
       </button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav navupd me-auto mb-2 mb-lg-0">
-          <li className="nav-item">
+          <li className="nav-item mx-1">
            <Link   className= {`nav-link ${location.pathname==="/"?"active":""}`} aria-current="page" to="/"   >Home</Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item mx-1">
+           <Link  className= {`nav-link ${location.pathname==="/newnote"?"active":""}`} to="/newnote"   >Add Note</Link>
+          </li>
+          <li className="nav-item mx-1">
+           <Link  className= {`nav-link ${location.pathname==="/viewnotes"?"active":""}`} to="/viewnotes"   >View Notes</Link>
+          </li>
+          <li className="nav-item mx-1">
            <Link  className= {`nav-link ${location.pathname==="/about"?"active":""}`} to="/about"   >About</Link>
           </li>
        
