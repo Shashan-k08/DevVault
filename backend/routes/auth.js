@@ -35,7 +35,7 @@ router.post('/createuser', [
       if (user) {
         return res.status(400).json({ success, error: "Sorry a user with this email already exist" })
       }
-      const temp= async (name, email) => {
+      const temp = async (name, email) => {
         var transporter = nodemailer.createTransport(smtpTransport({
           service: 'gmail',
           host: 'smtp.gmail.com',
@@ -69,8 +69,8 @@ router.post('/createuser', [
         email: req.body.email,
         password: securePassword,
       });
-    
-    temp(req.body.name,req.body.email);
+
+      temp(req.body.name, req.body.email);
       const data = {
         user: {
           id: user.id
@@ -83,7 +83,7 @@ router.post('/createuser', [
       // res.json({error:'Please enter a unique value for email'})})
       success = true;
       res.json({ success, verificationtoken });
-     
+
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Internal server error");
@@ -118,15 +118,6 @@ router.post('/login', [
         return res.status(400).json({ success, error: "Please try login with correct crendentials" });
 
       }
-
-      const data = {
-        user: {
-          id: user.id
-        }
-      }
-      const verificationtoken = jwt.sign(data, JWT_SECRET);
-      success = true;
-      res.json({ success, verificationtoken });
       const temp = async (name, email) => {
         var transporter = nodemailer.createTransport(smtpTransport({
           service: 'gmail',
@@ -154,6 +145,16 @@ router.post('/login', [
         });
         // res.status(200).json({msg:"asdf"}) 
       }
+      temp(user.name, req.body.email);
+      const data = {
+        user: {
+          id: user.id
+        }
+      }
+      const verificationtoken = jwt.sign(data, JWT_SECRET);
+      success = true;
+      res.json({ success, verificationtoken });
+
 
     } catch (error) {
       console.error(error.message);

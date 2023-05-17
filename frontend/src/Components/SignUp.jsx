@@ -5,7 +5,7 @@ import loginimg from '../img/virtual-reality 1.jpg'
 
 const SignUp = (props) => {
     const [credentials, setcredentials] = useState({ name: "", email: "", password: "" })
-    const host = "https://note-me-backend.onrender.com";
+    const host = "https://inotebook-id7a.onrender.com";
     let navigate = useNavigate();
 
     const handleSubmit = async (e) => {

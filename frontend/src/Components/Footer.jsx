@@ -1,37 +1,36 @@
 import React from 'react'
 import {
-    MDBFooter,
-    MDBContainer,
-    MDBCol,
-    MDBRow,
-    MDBIcon,
-    MDBBtn,
-    MDBInput
-  } from 'mdb-react-ui-kit';
+  MDBFooter,
+  MDBContainer,
+  MDBCol,
+  MDBRow,
+  MDBIcon,
+  MDBBtn,
+  MDBInput
+} from 'mdb-react-ui-kit';
 const Footer = () => {
   return (
-         <MDBFooter className='bg-light foot-c text-center text-white'>
+    <MDBFooter className='bg-light foot-c text-center text-white'>
       <MDBContainer className='p-4 pb-0'>
-      <MDBContainer className='p-4 pb-0'>
-        <form action=''>
-          <MDBRow className='d-flex justify-content-center'>
-            <MDBCol size='auto' className='mb-4 mb-md-0'>
-              <p className='pt-2' style={{color:'#807979'}}>
-                <strong>Subscribe for Alerts</strong>
-              </p>
-            </MDBCol>
+        <MDBContainer className='p-4 pb-0'>
+          <form action=''>
+            <MDBRow className='d-flex justify-content-center'>
+              <MDBCol size='auto' className='mb-4 mb-md-0'>
+                <p className='pt-2' style={{ color: '#807979' }}>
+                  <strong>Subscribe for Alerts</strong>
+                </p>
+              </MDBCol>
 
-            <MDBCol md='5' size='12' className='mb-4 mb-md-0'>
-              <MDBInput type='text' id='form5Example2' label='Email address' />
-            </MDBCol>
+              <MDBCol md='5' size='12' className='mb-4 mb-md-0'>
+                <MDBInput type='text' id='form5Example2' label='Email address' />
+              </MDBCol>
 
-            <MDBCol size='auto' className='mb-4 mb-md-0'>
-              <MDBBtn>Subscribe</MDBBtn>
-            </MDBCol>
-          </MDBRow>
-        </form>
-      </MDBContainer>
-        <section className='mb-4'>
+              <MDBCol size='auto' className='mb-4 mb-md-0'>
+                <MDBBtn>Subscribe</MDBBtn>
+              </MDBCol>
+            </MDBRow>
+          </form>
+          <section className='mb-4'>
           <MDBBtn
             floating
             className='m-1'
@@ -91,6 +90,8 @@ const Footer = () => {
             <MDBIcon fab icon='github' />
           </MDBBtn>
         </section>
+        </MDBContainer>
+       
       </MDBContainer>
 
       <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>

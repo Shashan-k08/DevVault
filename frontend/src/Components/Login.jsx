@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Spinner from './Spinner';
 import loginimg from '../img/virtual-reality 1.jpg'
 const Login = (props) => {
-    const host = "https://note-me-backend.onrender.com";
+    const host = "https://inotebook-id7a.onrender.com";
     const [credentials, setcredentials] = useState({ email: "", password: "" })
     const [loading, setloading] = useState(false);
     const navigate = useNavigate();
