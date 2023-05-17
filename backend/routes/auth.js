@@ -3,6 +3,11 @@ const otpGenerator = require('otp-generator')
 const User = require('../models/User');
 const { Otp } = require('../models/Otp');
 const router = express.Router();
+
+var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
+
+
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 const { body, validationResult } = require('express-validator');
@@ -30,28 +35,7 @@ router.post('/createuser', [
       if (user) {
         return res.status(400).json({ success, error: "Sorry a user with this email already exist" })
       }
-
-      const salt = await bcrypt.genSalt(10);
-      const securePassword = await bcrypt.hash(req.body.password, salt);
-      user = await User.create({
-        name: req.body.name,
-        email: req.body.email,
-        password: securePassword,
-      });
-
-      const data = {
-        user: {
-          id: user.id
-        }
-      }
-      const verificationtoken = jwt.sign(data, JWT_SECRET);
-
-      // .then(user => res.json(user))
-      // .catch(err=>{console.log(err)
-      // res.json({error:'Please enter a unique value for email'})})
-      success = true;
-      res.json({ success, verificationtoken });
-      async (name, email) => {
+      const temp= async (name, email) => {
         var transporter = nodemailer.createTransport(smtpTransport({
           service: 'gmail',
           host: 'smtp.gmail.com',
@@ -78,6 +62,28 @@ router.post('/createuser', [
         });
         // res.status(200).json({msg:"asdf"}) 
       }
+      const salt = await bcrypt.genSalt(10);
+      const securePassword = await bcrypt.hash(req.body.password, salt);
+      user = await User.create({
+        name: req.body.name,
+        email: req.body.email,
+        password: securePassword,
+      });
+    
+    temp(req.body.name,req.body.email);
+      const data = {
+        user: {
+          id: user.id
+        }
+      }
+      const verificationtoken = jwt.sign(data, JWT_SECRET);
+
+      // .then(user => res.json(user))
+      // .catch(err=>{console.log(err)
+      // res.json({error:'Please enter a unique value for email'})})
+      success = true;
+      res.json({ success, verificationtoken });
+     
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Internal server error");
@@ -121,33 +127,33 @@ router.post('/login', [
       const verificationtoken = jwt.sign(data, JWT_SECRET);
       success = true;
       res.json({ success, verificationtoken });
-      const temp = async(name,email)=>{
+      const temp = async (name, email) => {
         var transporter = nodemailer.createTransport(smtpTransport({
-        service: 'gmail',
-        host: 'smtp.gmail.com',
-        auth: {
+          service: 'gmail',
+          host: 'smtp.gmail.com',
+          auth: {
             user: 'shashank2110038@akgec.ac.in',
             pass: 'mvqgdfcfnmkfqlay'
             //pass: 'opwkndyvjzvwadhc'
-        }
+          }
         }));
-    
+
         var mailOptions = {
-        from: 'Shashank',
-        to: email, 
-        subject: "iNotebook",
-        html: `Hello <b>${name}</b>, <br> A new device has logged in into your account <br/> <br/> <br/> Thanks <br/><b>Team iNotebook </b>`
+          from: 'Shashank',
+          to: email,
+          subject: "iNotebook",
+          html: `Hello <b>${name}</b>, <br> A new device has logged in into your account <br/> <br/> <br/> Thanks <br/><b>Team iNotebook </b>`
         };
-    
-       await transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
+
+        await transporter.sendMail(mailOptions, function (error, info) {
+          if (error) {
             console.log(error);
-        } else {
+          } else {
             console.log('Email sent: ' + info.response);
-        }
-        }); 
-       // res.status(200).json({msg:"asdf"}) 
-    }
+          }
+        });
+        // res.status(200).json({msg:"asdf"}) 
+      }
 
     } catch (error) {
       console.error(error.message);
