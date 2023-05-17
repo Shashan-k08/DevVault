@@ -3,33 +3,20 @@
 .App {
   text-align: center;
 }
+/* hide scrollbar but allow scrolling */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 
 .fl-c{
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -216,6 +203,7 @@
   /* position: absolute; */
   width: 100%;
   bottom: 0%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .box-wrapper{
