@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import Spinner from './Spinner';
+import '../App.css'
 import loginimg from '../img/virtual-reality 1.jpg'
 const Login = (props) => {
     const host = "https://inotebook-id7a.onrender.com";
@@ -35,7 +36,7 @@ const Login = (props) => {
         }
     }
     const onChange = (e) => {
-        setcredentials({ ...credentials, [e.target.name]: e.target.value })
+        // setcredentials({ ...credentials, [e.target.name]: e.target.value })
     }
 
     const movesign = () => {
