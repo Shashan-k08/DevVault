@@ -70,7 +70,7 @@ const Notes = (props) => {
                                 </div>
                                 <div className="mb-3 ">
                                     <input type="text" name="etag" value={note.etag} className="form-label" id="etag" onChange={onChange} />
-                                    <label className="form-label" htmlFor="etag">Tag</label>
+                                    <label className="form-control" htmlFor="etag">Tag</label>
                                 </div>
 
                             </form>
@@ -82,16 +82,7 @@ const Notes = (props) => {
                     </div>
                 </div>
             </div>
-            <div className='row my-3'>
-
-                <h2>Your notes</h2>
-                <div className="container"> {notes.length===0 && "No notes to display"}</div>
-                {
-                    notes.map((note) => {
-                        return <Noteitem key={note._id} updateNote={updateNote} showalert={props.showalert} note={note} />
-                    })
-                }
-            </div>
+          
 
         </>
     )

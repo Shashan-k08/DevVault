@@ -198,9 +198,12 @@ body::-webkit-scrollbar {
   .button-box{
     margin-top: 1rem;
   }
+  .foot-c{
+    position: static;
+  }
 }
 .foot-c{
-  /* position: absolute; */
+   position: absolute; 
   width: 100%;
   bottom: 0%;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -257,4 +260,14 @@ body::-webkit-scrollbar {
   background-color:#e3c56b;
   color: white;
   /* margin-top: .7rem; */
+}
+
+.containerd{
+  height: 53vh;
+  width: 42vw;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.txt1{
+
 }
