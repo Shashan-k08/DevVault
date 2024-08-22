@@ -36,7 +36,7 @@ function App() {
         <Router>
         <Alert alert={alert} />
           <Navbar showalert={showalert} />
-          <div className="container fl-c">
+          <div className="container fl-c" style={{minHeight:"61vh"}}>
             <Routes>
               <Route path='/'  element={<Home showalert={showalert}/>} />
               <Route exact path='/about' element={<About />} />

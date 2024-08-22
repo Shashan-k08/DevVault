@@ -2,12 +2,19 @@ import React from 'react'
 import { Link,useLocation } from "react-router-dom";
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import useCustomToast from '../hooks/toast.hook';
 const Navbar=(props)=> {
   const navigate = useNavigate();
+  
+  const { successToast} = useCustomToast();
   const handlelogout=()=>{
     localStorage.removeItem('token');
     navigate("/login");
-    props.showalert("Logged-Out Successfully", "success")
+    successToast({
+      title: 'User logged-out',
+      description: "You have been logged out Successfully.",
+    });
+    //props.showalert("Logged-Out Successfully", "success")
   }
   let location = useLocation();
 
