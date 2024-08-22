@@ -35,7 +35,7 @@ function App() {
       <NoteState>
         <Router>
         <Alert alert={alert} />
-          <Navbar />
+          <Navbar showalert={showalert} />
           <div className="container fl-c">
             <Routes>
               <Route path='/'  element={<Home showalert={showalert}/>} />
@@ -44,7 +44,7 @@ function App() {
               <Route exact path='/signup' element={<SignUp showalert={showalert} />} />
               <Route exact path='/footer' element={<Footer showalert={showalert} />} />
               <Route exact path='/newnote' element={<Newnote showalert={showalert} />} />
-              {/* <Route exact path='/viewnotes' element={<Viewnotes showalert={showalert} />} /> */}
+              <Route exact path='/viewnotes' element={<Viewnotes showalert={showalert} />} />
 
             </Routes>
           </div>

@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import Spinner from './Spinner';
 import '../App.css'
 import loginimg from '../img/virtual-reality 1.jpg'
+import { MDBInput } from 'mdb-react-ui-kit';
+
 const Login = (props) => {
     const host = "https://inotebook-id7a.onrender.com";
     const [credentials, setcredentials] = useState({ email: "", password: "" })
@@ -36,7 +38,7 @@ const Login = (props) => {
         }
     }
     const onChange = (e) => {
-        // setcredentials({ ...credentials, [e.target.name]: e.target.value })
+         setcredentials({ ...credentials, [e.target.name]: e.target.value })
     }
 
     const movesign = () => {
@@ -52,13 +54,15 @@ const Login = (props) => {
                         <form className='loginform-box fl-c'>
                             <h4>Login</h4>
 
-                            <div class="form-outline mb-4">
+                            <div class="  mb-4">
+                            <label class="form-label" for="form1Example1">Email address</label>
                                 <input type="email" name="email" id="form1Example1" onChange={onChange} class="form-control" />
-                                <label class="form-label" for="form1Example1">Email address</label>
+                               
                             </div>
-                            <div class="form-outline mb-4">
+                            <div class="  mb-4">
+                            <label class="form-label" for="form1Example2">Password</label>
                                 <input type="password" name="password" id="form1Example2" onChange={onChange} class="form-control" />
-                                <label class="form-label" for="form1Example2">Password</label>
+                               
                             </div>
 
                             <div class="row mb-4">

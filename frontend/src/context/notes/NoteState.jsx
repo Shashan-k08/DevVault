@@ -15,7 +15,7 @@ const NoteState = (props) => {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json',
-                "auth-token":localStorage.getItem('token')
+                "auth-token": localStorage.getItem('token')
             }
         })
         const json = await response.json()
@@ -23,6 +23,7 @@ const NoteState = (props) => {
         setNotes(json)
     }
     // Add a note
+   
 
     const addNote = async (title, description, tag) => {
         //Api call
@@ -31,8 +32,8 @@ const NoteState = (props) => {
             headers: {
 
                 'Content-Type': 'application/json',
-                "auth-token":localStorage.getItem('token')
-             },
+                "auth-token": localStorage.getItem('token')
+            },
             body: JSON.stringify({ title, description, tag })
         })
         // eslint-disable-next-line
@@ -49,10 +50,11 @@ const NoteState = (props) => {
             method: "DELETE",
             headers: {
                 'Content-Type': 'aplication/json',
-                "auth-token":localStorage.getItem('token')},
+                "auth-token": localStorage.getItem('token')
+            },
 
         })
-        
+
         const json = response.json();
         console.log(json);
         console.log("Deleteing the note with id " + id);
@@ -67,7 +69,7 @@ const NoteState = (props) => {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json',
-                "auth-token":localStorage.getItem('token')
+                "auth-token": localStorage.getItem('token')
             },
             body: JSON.stringify({ title, description, tag })
         })

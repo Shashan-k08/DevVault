@@ -8,6 +8,11 @@ const Viewnotes = (props) => {
     const context = useContext(noteContext);
     const { notes, getnotes, editNote } = context;
     const navigate = useNavigate();
+
+    useEffect(()=>{
+        
+
+    },[])
     useEffect(() => {
         if (localStorage.getItem('token')) {
             getnotes();

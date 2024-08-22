@@ -34,54 +34,56 @@ const SignUp = (props) => {
         setcredentials({ ...credentials, [e.target.name]: e.target.value })
     }
 
-const movelog =()=>{
-    navigate('/login');
-}
+    const movelog = () => {
+        navigate('/login');
+    }
 
     return (
         <div className='conatiner fl-c'>
             <div className="signup-box">
-           
-           <div className="signup-box1 fl-r">
-            <img className="img-box"  src={loginimg} alt=""/>
-            <form className='form-box fl-c'>
-                <h4>Sign-Up</h4>
-                <div class="form-outline mb-4">
-                    <input type='text' name='name' id="form4Example1" onChange={onchange} value={credentials.name} class="form-control" />
-                    <label class="form-label" htmlFor="form4Example1">Full Name</label>
-                </div>
-                <div class="form-outline mb-4">
-                    <input type="email" name="email" id="form1Example1" onChange={onchange} class="form-control" />
-                    <label class="form-label" for="form1Example1">Email address</label>
-                </div>
-                <div class="form-outline mb-4">
-                    <input type="password" name="password" id="form1Example2" onChange={onchange} class="form-control" />
-                    <label class="form-label" for="form1Example2">Password</label>
-                </div>
-                <div class="form-outline mb-4">
-                    <input type="password" name="cpassword" id="form2Example2" class="form-control" />
-                    <label class="form-label" for="form2Example2"> Confirm Password</label>
-                </div>
-                <div class="row mb-4">
-                    <div class="col d-flex justify-content-center">
 
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
-                            <label class="form-check-label" for="form1Example3"> Remember me </label>
+                <div className="signup-box1 fl-r">
+                    <img className="img-box" src={loginimg} alt="" />
+                    <form className='form-box fl-c'>
+                        <h4>Sign-Up</h4>
+                        <div class="">
+                            <label class="form-label" htmlFor="form4Example1">Full Name</label>
+                            <input type='text' name='name' id="form4Example1" onChange={onchange} value={credentials.name} class="form-control" />
                         </div>
-                    </div>
+                        <div class="">
+                            <label class="form-label" for="form1Example1">Email address</label>
+                            <input type="email" name="email" id="form1Example1" onChange={onchange} class="form-control" />
+                        </div>
+                        <div class="">
+                            <label class="form-label" for="form1Example2">Password</label>
+                            <input type="password" name="password" id="form1Example2" onChange={onchange} class="form-control" />
 
-                    <div class="col">
+                        </div>
+                        <div class="">
 
-                        <a href="#!">Forgot password?</a>
-                    </div>
+                            <label class="form-label" for="form2Example2"> Confirm Password</label>
+                            <input type="password" name="cpassword" id="form2Example2" class="form-control" />
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col d-flex justify-content-center">
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                                    <label class="form-check-label" for="form1Example3"> Remember me </label>
+                                </div>
+                            </div>
+
+                            <div class="col">
+
+                                <a href="#!">Forgot password?</a>
+                            </div>
+                        </div>
+
+
+                        <button type="submit" onClick={handleSubmit} class="btn btn-primary btn-block">Sign Up</button>
+                        <p onClick={movelog}>Already Have an account? <span onClick={movelog}>Login </span> </p>
+                    </form>
                 </div>
-
-
-                <button type="submit" onClick={handleSubmit} class="btn btn-primary btn-block">Sign Up</button>
-                <p onClick={movelog}>Already Have an account? <span onClick={movelog}>Login </span> </p>
-                </form>
-            </div>
             </div>
         </div>
     )

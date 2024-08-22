@@ -11,7 +11,7 @@ import React from 'react'
     return lower.charAt(0).toUpperCase() + lower.slice(1);
   
   }
-  return (   <div style={{position:"sticky",top:"5px" ,zIndex:"1000",width:"100vw"}}>
+  return (   <div style={{position:"absolute",top:"5px" ,zIndex:"1000",width:"100vw"}}>
 
    { props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
       <strong>{capitalize(props.alert.type)}</strong>  :{props.alert.msg}
