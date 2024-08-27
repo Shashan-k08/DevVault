@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import loginimg from "../img/virtual-reality 1.jpg";
 import useCustomToast from "../hooks/toast.hook";
-
+import userContext from "../context/user/userContext";
 const SignUp = (props) => {
   const [credentials, setcredentials] = useState({
     name: "",
@@ -12,19 +12,14 @@ const SignUp = (props) => {
   });
   const host = "https://inotebook-id7a.onrender.com";
   let navigate = useNavigate();
+  const context = useContext(userContext);
+  const { userSignUp } = context;
   const { successToast, errorToast } = useCustomToast();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, email, password } = credentials;
-    const response = await fetch(`${host}/api/auth/createuser`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, email, password }),
-    });
-    const json = await response.json();
+    const json = await userSignUp(name, email, password);
     console.log(json);
     // save the verification token and redirect
     if (json.success) {

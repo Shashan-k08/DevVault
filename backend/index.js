@@ -1,21 +1,17 @@
-const connectToMongo= require('./db');
-const express = require('express')
-var cors=require('cors');
+const express = require("express");
+var cors = require("cors");
+require("dotenv").config();
+const connectToMongo = require("./db");
 connectToMongo();
-
-const app = express()
-const port = 3005
+const app = express();
+const port = 3005;
 app.use(cors());
-app.get('/', (req, res) => {
-  res.send('Hello Shashank!')
-})
 app.use(express.json());
 //Available Routes
 
-app.use('/api/auth', require('./routes/auth'))
-app.use('/api/notes', require('./routes/notes'))
-
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/notes", require("./routes/notes"));
 
 app.listen(port, () => {
-  console.log(`iNotebook app listening on port ${port}`)
-})
+  console.log(`iNotebook app listening on port ${port}`);
+});
