@@ -1,33 +1,26 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Spinner from "./Spinner";
 import "../App.css";
 import loginimg from "../img/virtual-reality 1.jpg";
 import useCustomToast from "../hooks/toast.hook";
+import userContext from "../context/user/userContext";
 
 const Login = (props) => {
   const host = "https://inotebook-id7a.onrender.com";
   const [credentials, setcredentials] = useState({ email: "", password: "" });
   const [loading, setloading] = useState(false);
   const navigate = useNavigate();
-  const { successToast,errorToast } = useCustomToast();
+  const context = useContext(userContext);
+  const { loginUser } = context;
+  const { successToast, errorToast } = useCustomToast();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setloading(true);
-    const response = await fetch(`${host}/api/auth/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: credentials.email,
-        password: credentials.password,
-      }),
-    });
-
-    const json = await response.json();
+    const json = await loginUser(credentials.email, credentials.password);
+    console.log(json);
     setloading(false);
     if (json.success) {
       // save the verification token and redirect

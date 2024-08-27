@@ -15,8 +15,9 @@ const UserState = (props) => {
       },
       body: JSON.stringify({ email, password }),
     });
-    setUser(response.json);
-    return response.json;
+    const json = await response.json();
+    setUser(json);
+    return json;
   };
 
   const userSignUp = async (name, email, password) => {
@@ -27,8 +28,9 @@ const UserState = (props) => {
       },
       body: JSON.stringify({ name, email, password }),
     });
-    setUser(response.json);
-    return response.json;
+    const json = await response.json();
+    setUser(json);
+    return json;
   };
 
   return (
@@ -38,4 +40,4 @@ const UserState = (props) => {
   );
 };
 
-export default NoteState;
+export default UserState;

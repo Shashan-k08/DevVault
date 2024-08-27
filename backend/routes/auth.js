@@ -153,7 +153,7 @@ router.post('/login', [
       }
       const verificationtoken = jwt.sign(data, JWT_SECRET);
       success = true;
-      res.json({ success, verificationtoken });
+      res.json({ success, verificationtoken,user });
 
 
     } catch (error) {
