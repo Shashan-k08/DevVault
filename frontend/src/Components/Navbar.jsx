@@ -3,6 +3,7 @@ import { Link,useLocation } from "react-router-dom";
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import useCustomToast from '../hooks/toast.hook';
+import { Avatar, AvatarBadge, AvatarGroup } from '@chakra-ui/react'
 const Navbar=(props)=> {
   const navigate = useNavigate();
   

@@ -10,6 +10,7 @@ import {
 
 } from "react-router-dom";
 import NoteState from './context/notes/NoteState';
+import UserState from './context/user/UserState';
 import Alert from './Components/Alert';
 import Login from './Components/Login';
 import SignUp from './Components/SignUp';
@@ -32,6 +33,7 @@ function App() {
   return (
     <> 
     <div className="fl-c">
+      <UserState>
       <NoteState>
         <Router>
         <Alert alert={alert} />
@@ -51,6 +53,7 @@ function App() {
         </Router>
         <Footer/>
       </NoteState>
+      </UserState>
       </div>
     </>
   );
