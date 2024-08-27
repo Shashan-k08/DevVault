@@ -48,10 +48,8 @@ const Login = (props) => {
   };
   return (
     <div className="conatiner fl-c">
-      {loading ? (
-        <Spinner />
-      ) : (
-        <div className="login-box">
+        {loading &&<Spinner />}
+        <div className={loading ?"login-box opac":'login-box'} >
           <div className="signup-box1 fl-r">
             <img className="img-box" src={loginimg} alt="" />
             <form className="loginform-box fl-c">
@@ -67,6 +65,7 @@ const Login = (props) => {
                   id="form1Example1"
                   onChange={onChange}
                   class="form-control"
+                  style={{width:"15rem",fontSize:"15px"}}
                 />
               </div>
               <div class="  mb-4">
@@ -79,6 +78,7 @@ const Login = (props) => {
                   id="form1Example2"
                   onChange={onChange}
                   class="form-control"
+                  style={{width:"15rem", fontSize:"15px"}}
                 />
               </div>
 
@@ -118,7 +118,7 @@ const Login = (props) => {
             </form>
           </div>
         </div>
-      )}
+      
     </div>
   );
 };

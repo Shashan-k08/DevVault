@@ -64,6 +64,7 @@ const SignUp = (props) => {
                 onChange={onchange}
                 value={credentials.name}
                 class="form-control"
+                style={{width:"15rem",fontSize:"15px"}}
               />
             </div>
             <div class="">
@@ -76,6 +77,7 @@ const SignUp = (props) => {
                 id="form1Example1"
                 onChange={onchange}
                 class="form-control"
+                style={{width:"15rem",fontSize:"15px"}}
               />
             </div>
             <div class="">
@@ -88,6 +90,7 @@ const SignUp = (props) => {
                 id="form1Example2"
                 onChange={onchange}
                 class="form-control"
+                style={{width:"15rem",fontSize:"15px"}}
               />
             </div>
             <div class="">
@@ -100,6 +103,7 @@ const SignUp = (props) => {
                 name="cpassword"
                 id="form2Example2"
                 class="form-control"
+                style={{width:"15rem",fontSize:"15px"}}
               />
             </div>
             <div class="row mb-4">
@@ -111,6 +115,7 @@ const SignUp = (props) => {
                     value=""
                     id="form1Example3"
                     checked
+                    
                   />
                   <label class="form-check-label" for="form1Example3">
                     {" "}

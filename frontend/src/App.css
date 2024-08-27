@@ -124,11 +124,9 @@ body::-webkit-scrollbar {
 .signup-box{
   margin-top: 5rem;
   margin-bottom: 9rem;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+ 
 }
 
-.signup-box1{
-}
 .form-box{
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   padding: 1rem;
@@ -137,9 +135,9 @@ body::-webkit-scrollbar {
   
 }
 
-.img-box img{
-  background-size: cover;
-  transform: scale(.7);
+.img-box {
+  height: 39vw;
+  width: 39vw;
 }
 
 .form-box button,.loginform-box button{
@@ -162,29 +160,38 @@ body::-webkit-scrollbar {
 .login-box{
   margin-top: 5rem;
   margin-bottom: 9rem;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
 }
 
 .loginform-box{
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+ box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   padding: 1rem;
   margin: 1rem;
-  height: 55vh;
   
+}
+.opac{
+  opacity: .2;
 }
 
 .titl{
   color: #3b71ca !important;
   font-weight: 800;
   font-size: 2rem !important;
+  margin-left: 30px;
 }
 
 .navupd{
-  padding-left: 46vw !important;
+  /* padding-left: 46vw !important; */
   font-size: 1.1rem;
   font-weight: 500;
 }
 
+.navbar-collapse{
+  max-width: fit-content ;
+}
+.me-auto{
+  margin-right: 14px !important;
+}
 .navtag{
   background-image:aliceblue !important ;
 }
@@ -210,6 +217,12 @@ body::-webkit-scrollbar {
     position: static !important ;
   }
 }
+
+@media (min-width:550px) {
+  .services-card .chakra-card{
+    min-width: 29rem;
+    }
+}
 .foot-c{
  
   width: 100%;
@@ -233,7 +246,26 @@ bottom: 0%;
   font-weight: 600;
   font-size: 1.6rem !important;
 }
+.services-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 36px;
 
+}
+
+.service-wrapper{
+margin: 2rem .5rem 2rem .5rem;
+gap: 15px;
+text-align: center;
+}
+.chakra-card__header{
+  padding: 1rem !important;
+}
+.chakra-card__body{
+  padding: .5rem !important;
+}
 .view-box{
   height: 24vh;
   display: flex;

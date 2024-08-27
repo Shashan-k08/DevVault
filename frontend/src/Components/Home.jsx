@@ -1,28 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-const Home = (props) => {
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Heading,
+  Text,
+  Button,
+  Input,
+  InputGroup,
+  InputRightElement,
+} from "@chakra-ui/react";
+import { SearchIcon } from "@chakra-ui/icons";
+
+const Home = () => {
   const navigate = useNavigate();
-  const moveadd = () => {
-    navigate("/newnote");
-  };
-  const moveview = () => {
-    navigate("/viewnotes");
-  };
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const tools = [
+    { name: "CodeVault", description: "Keep Your Code Safely and Securely" },
+    { name: "NoteSafe", description: "Save The important Notes Securely" },
+    { name: "SafeKeep", description: "Keep The Important documents Securely" },
+    {
+      name: "Text Formattor",
+      description: "Format text and remove extra spaces",
+    },
+  ];
+
+  const filteredTools = tools.filter((tool) =>
+    tool.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <div className="fl-c box-wrapper">
-      <h6>Tap to Add or View Notes</h6>
-      <div className="fl-r button-box">
-        <div onClick={moveadd} className="add-box">
-          {" "}
-          <button>Add Notes</button>
-        </div>
-        <div onClick={moveview} className="view-box">
-          {" "}
-          <button>View Notes</button>
-        </div>
+    <div className="fl-c service-wrapper">
+      <h2>Safeguard and Streamline Your Development Workspace</h2>
+      <h6>
+        Essential Tools for Developers: Secure Your Code, Notes, and Documents
+      </h6>
 
-        {/* <Notes showalert={props.showalert} /> */}
+      <InputGroup mb={4} maxWidth="400px" mx="auto">
+        <Input
+          placeholder="Search tools"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <InputRightElement pointerEvents="none">
+          <SearchIcon color="gray.500" />
+        </InputRightElement>
+      </InputGroup>
+
+      {/* Tools Display */}
+      <div className="services-card">
+        {filteredTools.map((tool, index) => (
+          <Card key={index} align="center">
+            <CardHeader>
+              <Heading size="md">{tool.name}</Heading>
+            </CardHeader>
+            <CardBody>
+              <Text>{tool.description}</Text>
+            </CardBody>
+            <CardFooter>
+              <Button colorScheme="blue">View here</Button>
+            </CardFooter>
+          </Card>
+        ))}
       </div>
     </div>
   );
