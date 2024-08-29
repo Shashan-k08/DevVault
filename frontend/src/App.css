@@ -112,6 +112,9 @@ body::-webkit-scrollbar {
   .img-box{
     display:none;
   }
+  .vault-modal{
+    flex-wrap: wrap;
+  }
 }
 
 @media (min-width:860px) {

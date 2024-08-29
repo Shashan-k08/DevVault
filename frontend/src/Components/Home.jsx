@@ -20,7 +20,7 @@ const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const tools = [
-    { name: "CodeVault", description: "Keep Your Code Safely and Securely" },
+    { name: "CodeVault", description: "Keep Your Reusable Code Safely and Securely" },
     {
       name: "Code-Formatter",
       description: "Effortlessly format C++, Java, and Python code",

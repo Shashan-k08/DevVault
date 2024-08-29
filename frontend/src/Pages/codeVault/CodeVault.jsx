@@ -1,7 +1,9 @@
-import { Stack, Flex, Text, Button } from "@chakra-ui/react";
+import { Stack, Flex, Text, Button ,useDisclosure} from "@chakra-ui/react";
 import React from "react";
 import "./CodeVault.css";
+import CodeVaultmodal from "../../modals/CodeVaultmodal";
 const CodeVault = () => {
+    const { isOpen,onOpen, onClose } = useDisclosure();
   return (
     <Stack marginTop={4}>
       <Flex
@@ -12,9 +14,10 @@ const CodeVault = () => {
       >
         <Text className="tool-title-text">CodeVault</Text>
 
-        <Button colorScheme="blue" onClick="">
+        <Button colorScheme="blue" onClick={onOpen}>
           Add Code
         </Button>
+        <CodeVaultmodal onClose={onClose} isOpen={isOpen}/>
       </Flex>
     </Stack>
   );
