@@ -17,7 +17,7 @@ import SignUp from './Components/SignUp';
 import { useState } from 'react';
 import Footer from './Components/Footer';
 import Newnote from './Components/Newnote';
-import Viewnotes from './Components/Viewnotes';
+import CodeVault from './Pages/codeVault/CodeVault';
 
 function App() {
   const [alert, setalert] = useState(null);
@@ -46,7 +46,7 @@ function App() {
               <Route exact path='/signup' element={<SignUp showalert={showalert} />} />
               <Route exact path='/footer' element={<Footer showalert={showalert} />} />
               <Route exact path='/newnote' element={<Newnote showalert={showalert} />} />
-              <Route exact path='/viewnotes' element={<Viewnotes showalert={showalert} />} />
+              <Route exact path='/inotebook/codeVault' element={<CodeVault/>} />
 
             </Routes>
           </div>

@@ -11,8 +11,9 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+ 
 } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
+import { SearchIcon,  ExternalLinkIcon} from "@chakra-ui/icons";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -20,12 +21,21 @@ const Home = () => {
 
   const tools = [
     { name: "CodeVault", description: "Keep Your Code Safely and Securely" },
+    {
+      name: "Code-Formatter",
+      description: "Effortlessly format C++, Java, and Python code",
+    },
+    {
+      name: "RegexBuilder",
+      description:
+        "Create, test, and refine your regular expressions with ease.",
+    },
+    {
+      name: "Text Formatter",
+      description: "Seamlessly format and clean up your text.",
+    },
     { name: "NoteSafe", description: "Save The important Notes Securely" },
     { name: "SafeKeep", description: "Keep The Important documents Securely" },
-    {
-      name: "Text Formattor",
-      description: "Format text and remove extra spaces",
-    },
   ];
 
   const filteredTools = tools.filter((tool) =>
@@ -61,7 +71,7 @@ const Home = () => {
               <Text>{tool.description}</Text>
             </CardBody>
             <CardFooter>
-              <Button colorScheme="blue">View here</Button>
+           See more <ExternalLinkIcon/>
             </CardFooter>
           </Card>
         ))}

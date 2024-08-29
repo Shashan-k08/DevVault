@@ -22,8 +22,7 @@ body::-webkit-scrollbar {
 .fl-c{
   overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: center;
+ 
   flex-direction: column;
 }
 
@@ -219,8 +218,12 @@ body::-webkit-scrollbar {
 }
 
 @media (min-width:550px) {
+  .logout-btn{
+    margin-right: 10px;
+  }
   .services-card .chakra-card{
-    min-width: 29rem;
+    min-width: 25rem;
+    max-width: 25rem;
     }
 }
 .foot-c{
@@ -246,10 +249,18 @@ bottom: 0%;
   font-weight: 600;
   font-size: 1.6rem !important;
 }
+.services-card .chakra-card{
+  align-items: start !important;
+  padding: .5rem;
+  cursor: pointer;
+}
+.services-card .chakra-card:hover{
+  scale: 1.02;
+}
 .services-card{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 36px;
 
@@ -265,7 +276,18 @@ text-align: center;
 }
 .chakra-card__body{
   padding: .5rem !important;
+  text-align: start;
 }
+
+.chakra-card__footer{
+  text-align: center;
+  gap: 7px;
+  align-items: center;
+  color:  #3b71ca;
+  font-weight: 600;
+  padding-top: 0rem !important;
+}
+
 .view-box{
   height: 24vh;
   display: flex;
