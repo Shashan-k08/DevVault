@@ -13,7 +13,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import axios from "axios";
-
+import { CopyIcon } from "@chakra-ui/icons";
 const CodeFormatter = () => {
   const [code, setCode] = useState("");
   const [formattedCode, setFormattedCode] = useState("");
@@ -21,16 +21,34 @@ const CodeFormatter = () => {
 
   const handleFormat = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/formatCode", {
-        code,
-        language,
-      });
+      const response = await axios.post(
+        "http://localhost:3005/api/format_code",
+        {
+          code,
+          language,
+        }
+      );
+      console.log(response);
       setFormattedCode(response.data.formattedCode);
     } catch (error) {
       console.error("Failed to format code", error);
     }
   };
-
+  const handleReset = () => {
+    setCode("");
+    setFormattedCode("");
+    setLanguage("");
+  };
+  const handleCopy = () => {
+    navigator.clipboard.writeText(formattedCode).then(
+      () => {
+        console.log("Formatted code copied to clipboard!");
+      },
+      (err) => {
+        console.error("Could not copy text: ", err);
+      }
+    );
+  };
   return (
     <Stack marginTop={4}>
       <Flex
@@ -42,8 +60,7 @@ const CodeFormatter = () => {
       >
         <Text className="tool-title-text">CodeFormatter</Text>
         <FormControl maxWidth="fit-content">
-          <FormLabel>
-          Language</FormLabel>
+          <FormLabel>Language</FormLabel>
           <Select
             placeholder="Select Language"
             value={language}
@@ -51,13 +68,12 @@ const CodeFormatter = () => {
             onChange={(e) => setLanguage(e.target.value)}
             mb={4}
           >
-            <option value="option1">C++</option>
-            <option value="option2">Java</option>
-            <option value="option3">Python</option>
-            <option value="option3">ReactJs</option>
-            <option value="option3">Expressjs</option>
-            <option value="option3">HTML</option>
-            <option value="option3">CSS</option>
+            <option value="javascript">Javascript</option>
+            <option value="typescript">Typescript</option>
+            <option value="typescript">ReactJs</option>
+            <option value="typescript">ExpressJs</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
           </Select>
         </FormControl>
       </Flex>
@@ -69,16 +85,41 @@ const CodeFormatter = () => {
         mb={4}
         rows={10}
       />
-
-      <Button colorScheme="teal" maxWidth="8rem" onClick={handleFormat}>
-        Format Code
-      </Button>
-
+      <Flex
+        flexWrap={"wrap"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        gap={3}
+        flexDirection="row"
+      >
+        <Button colorScheme="teal" maxWidth="8rem" onClick={handleFormat}>
+          Format Code
+        </Button>
+        <Button
+          colorScheme="red"
+          variant="outline"
+          maxWidth="8rem"
+          onClick={handleReset}
+        >
+          Reset Code
+        </Button>
+      </Flex>
       {formattedCode && (
         <Box mt={4}>
-          <Text fontSize="lg" mb={2}>
-            Formatted Code:
-          </Text>
+          <Flex
+            flexWrap={"wrap"}
+            justifyContent={"space-between"}
+            alignItems={"center"}
+            gap={3}
+            flexDirection="row"
+            marginBottom={4}
+          >
+            <Text marginBottom="0" className="tool-title-text">Formatted Code:</Text>
+            <Button colorScheme="blue" variant="outline" maxWidth="8rem" onClick={handleCopy}>
+              <CopyIcon mr={2} />
+              Copy
+            </Button>
+          </Flex>
           <Textarea value={formattedCode} readOnly size="md" rows={10} />
         </Box>
       )}
