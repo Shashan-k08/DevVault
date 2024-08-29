@@ -18,6 +18,7 @@ import { useState } from 'react';
 import Footer from './Components/Footer';
 import Newnote from './Components/Newnote';
 import CodeVault from './Pages/codeVault/CodeVault';
+import CodeFormatter from './Pages/codeFormatter/CodeFormatter';
 
 function App() {
   const [alert, setalert] = useState(null);
@@ -47,6 +48,7 @@ function App() {
               <Route exact path='/footer' element={<Footer showalert={showalert} />} />
               <Route exact path='/newnote' element={<Newnote showalert={showalert} />} />
               <Route exact path='/inotebook/codeVault' element={<CodeVault/>} />
+              <Route exact path='/inotebook/codeFormatter' element={<CodeFormatter/>} />
 
             </Routes>
           </div>
