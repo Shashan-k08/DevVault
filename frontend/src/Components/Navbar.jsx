@@ -3,7 +3,6 @@ import { Link,useLocation } from "react-router-dom";
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import useCustomToast from '../hooks/toast.hook';
-import { Avatar, AvatarBadge, AvatarGroup } from '@chakra-ui/react'
 const Navbar=(props)=> {
   const navigate = useNavigate();
   
@@ -26,7 +25,7 @@ const Navbar=(props)=> {
     <div >
     <nav className="navbar navbar-expand-lg bg-light">
     <div className="container-fluid">
-     <Link  className="navbar-brand titl" to="/">iNoteBook</Link>
+     <Link  className="navbar-brand titl" to="/">DevVault</Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon "></span>
       </button>
@@ -36,10 +35,7 @@ const Navbar=(props)=> {
            <Link   className= {`nav-link ${location.pathname==="/"?"active":""}`} aria-current="page" to="/"   >Home</Link>
           </li>
           <li className="nav-item mx-1">
-           <Link  className= {`nav-link ${location.pathname==="/newnote"?"active":""}`} to="/newnote"   >Add Note</Link>
-          </li>
-          <li className="nav-item mx-1">
-           <Link  className= {`nav-link ${location.pathname==="/viewnotes"?"active":""}`} to="/viewnotes"   >View Notes</Link>
+           <Link  className= {`nav-link ${location.pathname==="/viewnotes"?"active":""}`} to="/viewnotes"   >Contact</Link>
           </li>
           <li className="nav-item mx-1">
            <Link  className= {`nav-link ${location.pathname==="/about"?"active":""}`} to="/about"   >About</Link>

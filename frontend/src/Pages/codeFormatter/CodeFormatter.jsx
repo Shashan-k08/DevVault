@@ -63,7 +63,7 @@ const CodeFormatter = () => {
           <FormLabel>Language</FormLabel>
           <Select
             placeholder="Select Language"
-            value={language}
+            
             maxWidth="12rem"
             onChange={(e) => setLanguage(e.target.value)}
             mb={4}

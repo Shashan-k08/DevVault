@@ -47,8 +47,8 @@ function App() {
               <Route exact path='/signup' element={<SignUp showalert={showalert} />} />
               <Route exact path='/footer' element={<Footer showalert={showalert} />} />
               <Route exact path='/newnote' element={<Newnote showalert={showalert} />} />
-              <Route exact path='/inotebook/codeVault' element={<CodeVault/>} />
-              <Route exact path='/inotebook/codeFormatter' element={<CodeFormatter/>} />
+              <Route exact path='/devVault/codeVault' element={<CodeVault/>} />
+              <Route exact path='/devVault/codeFormatter' element={<CodeFormatter/>} />
 
             </Routes>
           </div>
