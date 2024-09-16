@@ -39,7 +39,7 @@ function App() {
         <Router>
         <Alert alert={alert} />
           <Navbar showalert={showalert} />
-          <div className="container fl-c" style={{minHeight:"61vh"}}>
+          <div className="container fl-c" style={{minHeight:"61vh" ,marginTop:"6rem"}}>
             <Routes>
               <Route path='/'  element={<Home showalert={showalert}/>} />
               <Route exact path='/about' element={<About />} />

@@ -2,8 +2,9 @@ const express = require("express");
 const CodeVault = require("../models/codeVault.modal");
 
 const saveCode = async (req, res) => {
+  console.log("hi")
   const { title, language, description, code } = req.body;
-
+console.log(title)
   try {
     const newCodeEntry = new CodeVault({
       title,
@@ -14,6 +15,7 @@ const saveCode = async (req, res) => {
 
     const savedEntry = await newCodeEntry.save();
     res.json({ success: true, data: savedEntry });
+    console.log(savedEntry)
   } catch (error) {
     res.status(500).json({ success: false, message: "Server Error" });
   }

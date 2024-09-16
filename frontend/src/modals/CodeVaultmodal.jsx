@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   FormControl,
@@ -13,12 +13,41 @@ import {
   ModalCloseButton,
   Textarea,
   Select,
-  Flex
+  Flex,
 } from "@chakra-ui/react";
+import Spinner from "../Components/Spinner";
 import { wrap } from "framer-motion";
+import axios from "axios";
 const CodeVaultmodal = (props) => {
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
+  const [title, setTitle] = useState("");
+  const [language, setLanguage] = useState("");
+  const [description, setDescription] = useState("");
+  const [code, setCode] = useState("");
+  const [loading, setloading] = useState(false);
+
+  const handleSubmit = async () => {
+    try {
+      setloading(true);
+      console.log(code);
+      const response = await axios.post(
+        "http://localhost:3005/api/devVault/codeVault/saveCode",
+        {
+          title,
+          language,
+          description,
+          code,
+        }
+      );
+      console.log(response);
+      //fetchCodes();
+      //setloading(false);
+      //props.onClose();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -29,6 +58,7 @@ const CodeVaultmodal = (props) => {
         onClose={props.onClose}
       >
         <ModalOverlay />
+
         <ModalContent mx={3}>
           <ModalHeader>Save your reusaable & Important code.</ModalHeader>
           <ModalCloseButton />
@@ -36,34 +66,51 @@ const CodeVaultmodal = (props) => {
             <Flex className="vault-modal" flexDirection="row" gap={1}>
               <FormControl>
                 <FormLabel>Code Title</FormLabel>
-                <Input ref={initialRef} placeholder="Code title" />
+                <Input
+                  ref={initialRef}
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder="Code title"
+                />
               </FormControl>
               <FormControl>
                 <FormLabel>Language</FormLabel>
-                <Select placeholder="Select language">
-                  <option value="option1">C++</option>
-                  <option value="option2">Java</option>
-                  <option value="option3">Python</option>
-                  <option value="option3">ReactJs</option>
-                  <option value="option3">Expressjs</option>
-                  <option value="option3">HTML</option>
+                <Select
+                  placeholder="Select language"
+                  value={language}
+                  onChange={(e) => setLanguage(e.target.value)}
+                >
+                  <option value="C++">C++</option>
+                  <option value="Java">Java</option>
+                  <option value="Python">Python</option>
+                  <option value="React.js">React.js</option>
+                  <option value="Express.js">Express.js</option>
+                  <option value="HTML">HTML</option>
                   <option value="option3">CSS</option>
                 </Select>
               </FormControl>
             </Flex>
             <FormControl mt={4}>
               <FormLabel>Code Description(optional)</FormLabel>
-              <Input placeholder="Code description" />
+              <Input
+                placeholder="Code description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
             </FormControl>
 
             <FormControl mt={4}>
               <FormLabel>Code</FormLabel>
-              <Textarea placeholder="Paste or write your code" />
+              <Textarea
+                placeholder="Paste or write your code"
+                value={code}
+                onChange={(e) => setCode(e.target.value)}
+              />
             </FormControl>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3}>
+            <Button colorScheme="blue" mr={3} onClick={handleSubmit}>
               Save
             </Button>
             <Button onClick={props.onClose}>Cancel</Button>
