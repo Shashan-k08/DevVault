@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import NoteState from './context/notes/NoteState';
 import UserState from './context/user/UserState';
+import CodeVaultState from './context/codeVault/CodeVaultState';
 import Alert from './Components/Alert';
 import Login from './Components/Login';
 import SignUp from './Components/SignUp';
@@ -36,6 +37,7 @@ function App() {
     <div className="fl-c">
       <UserState>
       <NoteState>
+        <CodeVaultState>
         <Router>
         <Alert alert={alert} />
           <Navbar showalert={showalert} />
@@ -54,6 +56,7 @@ function App() {
           </div>
         </Router>
         <Footer/>
+        </CodeVaultState>
       </NoteState>
       </UserState>
       </div>

@@ -1,14 +1,11 @@
-.lds-box {
-  display: flex;
+.lds-spinner {
+  color: official;
+  display: inline-block;
   position: absolute;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
- 
-  height: 100%;
-  /* top: 50%; */
-  /* left: 50%; */
-  width: 100%;
+  width: 80px;
+  height: 80px;
+  top: 50vh;
+  width: 50vw;
 }
 .lds-spinner div {
   transform-origin: 40px 40px;
@@ -81,8 +78,6 @@
     opacity: 0;
   }
 }
-.nv1{
-color: white;
+.nv1 {
+  color: white;
 }
-
-

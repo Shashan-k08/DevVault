@@ -1,24 +1,15 @@
 import { Stack, Flex, Text, Button, useDisclosure } from "@chakra-ui/react";
 import React from "react";
 import "./CodeVault.css";
-import axios from "axios";
 import CodeVaultmodal from "../../modals/CodeVaultmodal";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import codeVaultContext from "../../context/codeVault/codeVaultContext";
 const CodeVault = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const fetchAllCode = async () => {
-    const response = await axios.get(
-      "http://localhost:3005/api/devVault/codeVault/getAllSaved"
-    );
-    console.log(response);
-  };
-  useEffect(() => {
-    try {
-      fetchAllCode();
-    } catch (err) {
-      console.log(err);
-    }
-  }, []);
+  const context = useContext(codeVaultContext);
+  const { fetchAllCode, codes, setCodes } = context;
+  fetchAllCode();
+  console.log("codevault", codes);
 
   return (
     <Stack marginTop={4}>
