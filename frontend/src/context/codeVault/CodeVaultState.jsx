@@ -2,7 +2,7 @@ import React from "react";
 import codeVaultContext from "./codeVaultContext";
 import { useState } from "react";
 import axios from "axios";
-const codeVaultState = (props) => {
+const CodeVaultState = (props) => {
   const savedCodeInitial = [];
   const [codes, setCodes] = useState(savedCodeInitial)
   const host = "https://inotebook-id7a.onrender.com";
@@ -19,4 +19,4 @@ const codeVaultState = (props) => {
   );
 };
 
-export default codeVaultState;
+export default CodeVaultState;

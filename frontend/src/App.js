@@ -20,6 +20,7 @@ import Footer from './Components/Footer';
 import Newnote from './Components/Newnote';
 import CodeVault from './Pages/codeVault/CodeVault';
 import CodeFormatter from './Pages/codeFormatter/CodeFormatter';
+import TextPrettier from './Pages/textPrettier/TextPrettier';
 
 function App() {
   const [alert, setalert] = useState(null);
@@ -41,7 +42,7 @@ function App() {
         <Router>
         <Alert alert={alert} />
           <Navbar showalert={showalert} />
-          <div className="container fl-c" style={{minHeight:"61vh" ,marginTop:"6rem"}}>
+          <div className="container fl-c" style={{minHeight:"80vh" ,marginTop:"6rem"}}>
             <Routes>
               <Route path='/'  element={<Home showalert={showalert}/>} />
               <Route exact path='/about' element={<About />} />
@@ -51,6 +52,7 @@ function App() {
               <Route exact path='/newnote' element={<Newnote showalert={showalert} />} />
               <Route exact path='/devVault/codeVault' element={<CodeVault/>} />
               <Route exact path='/devVault/codeFormatter' element={<CodeFormatter/>} />
+              <Route exact path='/devVault/textPrettier' element={<TextPrettier/>} />
 
             </Routes>
           </div>

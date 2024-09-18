@@ -36,9 +36,9 @@ const Home = () => {
       path: "/devVault/regexBuilder",
     },
     {
-      name: "Text Formatter",
+      name: "Text Prettier",
       description: "Seamlessly format and clean up your text.",
-      path: "/devVault/textFormatter",
+      path: "/devVault/textPrettier",
     },
     {
       name: "NoteSafe",
