@@ -13,6 +13,7 @@ app.use("/api/auth", require("./routes/auth"));
 app.use("/api/notes", require("./routes/notes"));
 app.use("/api", require("./routes/codeFormatter_route"));
 app.use("/api", require("./routes/codeVault_route"));
+app.use("/api", require("./routes/textPrettier_route"));
 
 app.listen(port, () => {
   console.log(`iNotebook app listening on port ${port}`);

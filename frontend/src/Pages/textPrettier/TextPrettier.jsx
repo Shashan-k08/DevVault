@@ -23,7 +23,7 @@ const TextPrettier = () => {
   // Handle API call to format the text
   const handleFormatText = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/format_text", {
+      const response = await axios.post("http://localhost:3005/api/format_text", {
         text,
         options: {
           convertToLowercase: option === "tolowercase",
