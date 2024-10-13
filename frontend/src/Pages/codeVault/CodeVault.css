@@ -3,3 +3,19 @@
   color: #4f4d4dd9;
   font-size: 18px;
 }
+
+.no_code_flexbox{
+  flex-direction: column;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: auto;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-top: 6rem;
+}
+.no_code_text{
+  text-align: center;
+  font-size: 1.5rem;
+  opacity: .8;
+  font-weight: 500;
+  
+}
