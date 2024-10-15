@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   Button,
   FormControl,
@@ -15,9 +15,7 @@ import {
   Select,
   Flex,
 } from "@chakra-ui/react";
-import Spinner from "../Components/Spinner";
-import { wrap } from "framer-motion";
-import axios from "axios";
+import codeVaultContext from "../context/codeVault/codeVaultContext";
 const CodeVaultmodal = (props) => {
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
@@ -26,24 +24,15 @@ const CodeVaultmodal = (props) => {
   const [description, setDescription] = useState("");
   const [code, setCode] = useState("");
   const [loading, setloading] = useState(false);
+  const context = useContext(codeVaultContext);
+  const { addNewCode } = context;
 
   const handleSubmit = async () => {
     try {
       setloading(true);
-      console.log(code);
-      const response = await axios.post(
-        "http://localhost:3005/api/devVault/codeVault/saveCode",
-        {
-          title,
-          language,
-          description,
-          code,
-        }
-      );
-      console.log(response);
-      //fetchCodes();
       //setloading(false);
-      //props.onClose();
+      await addNewCode(title, language, description, code);
+      props.onClose();
     } catch (error) {
       console.log(error);
     }

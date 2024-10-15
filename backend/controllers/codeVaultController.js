@@ -14,7 +14,8 @@ console.log(title)
     });
 
     const savedEntry = await newCodeEntry.save();
-    res.json({ success: true, data: savedEntry });
+    const codeEntries = await CodeVault.find();
+    res.json({ success: true, data: codeEntries });
     console.log(savedEntry)
   } catch (error) {
     res.status(500).json({ success: false, message: "Server Error" });

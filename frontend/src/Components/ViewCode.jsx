@@ -19,6 +19,7 @@ import {
   Text,
   Button,
 } from "@chakra-ui/react";
+import ViewCodemodal from "../modals/ViewCodemodal";
 const ViewCode = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { code } = props;
@@ -41,7 +42,8 @@ const ViewCode = (props) => {
         <Text>{code.description}</Text>
       </CardBody>
       <CardFooter>
-        <Button>View Code</Button>
+        <Button onClick={onOpen}>View Code</Button>
+        <ViewCodemodal onClose={onClose} isOpen={isOpen} code={code} />
       </CardFooter>
     </Card>
   );
