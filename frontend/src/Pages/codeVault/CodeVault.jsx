@@ -21,25 +21,26 @@ const CodeVault = () => {
 
   return (
     <Stack marginTop={4}>
+      <Flex
+        flexWrap={"wrap"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        gap={3}
+      >
+        <Text className="tool-title-text">CodeVault</Text>
+
+        <Button colorScheme="blue" onClick={onOpen}>
+          Add Code
+        </Button>
+        <CodeVaultmodal onClose={onClose} isOpen={isOpen} />
+      </Flex>
       {loading ? (
         <Flex style={{ position: "absolute", top: "50vh", left: "50%" }}>
           <Spinner color="teal.500" thickness="4px" size="lg" />
         </Flex>
       ) : (
         <>
-          <Flex
-            flexWrap={"wrap"}
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            gap={3}
-          >
-            <Text className="tool-title-text">CodeVault</Text>
-
-            <Button colorScheme="blue" onClick={onOpen}>
-              Add Code
-            </Button>
-            <CodeVaultmodal onClose={onClose} isOpen={isOpen} />
-          </Flex>
+          {" "}
           {codes == null ? (
             <>
               <Flex className="no_code_flexbox">
@@ -55,15 +56,28 @@ const CodeVault = () => {
               </Flex>
             </>
           ) : (
-            <div className=" service-wrapper">
-              {codes.map((code) => {
-                return (
-                  <div className="view_code_card services-card">
-                    <ViewCode key={code._id} code={code} />
-                  </div>
-                );
-              })}
-            </div>
+            <>
+              <div className="view_code_card service-wrapper">
+                {codes.map((code) => {
+                  return (
+                    <div className="code_vault-card">
+                      <ViewCode key={code._id} code={code} />
+                    </div>
+                  );
+                })}
+              </div>
+
+              <Flex className="add_new_box">
+                <Button
+                  colorScheme="blue"
+                  width="max-content"
+                  margin="auto"
+                  onClick={onOpen}
+                >
+                  +
+                </Button>
+              </Flex>
+            </>
           )}
         </>
       )}

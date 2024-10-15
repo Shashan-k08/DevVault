@@ -4,7 +4,7 @@
   font-size: 18px;
 }
 
-.no_code_flexbox{
+.no_code_flexbox {
   flex-direction: column;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   margin: auto;
@@ -12,10 +12,75 @@
   border-radius: 12px;
   margin-top: 6rem;
 }
-.no_code_text{
+.no_code_text {
   text-align: center;
   font-size: 1.5rem;
-  opacity: .8;
+  opacity: 0.8;
   font-weight: 500;
-  
+}
+
+.add_new_box {
+  flex-direction: column;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: auto;
+  padding: 0.5rem;
+  border-radius: 70px;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+}
+.add_new_box button {
+  font-size: 20px;
+  padding: 3px;
+  text-align: center;
+  border-radius: 22px;
+}
+
+@media (min-width: 550px) {
+  .logout-btn {
+    margin-right: 10px;
+  }
+  .code_vault-card .chakra-card {
+    min-width: 22rem;
+    max-width: 26rem;
+  }
+}
+
+.view_code_card {
+  gap: 36px;
+}
+.code_vault-card .chakra-card {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center !important;
+  justify-content: center;
+}
+.code_vault-card .chakra-card:hover {
+  scale: 1.02;
+}
+.code_vault-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.code_vault-card .chakra-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.code_vault-card .chakra-card__body p {
+  font-size: 12px;
+  padding-bottom: 0rem !important;
+}
+
+.code_three_dot {
+  position: absolute;
+  top: 32px;
+  z-index: 100;
+  cursor: pointer;
+  right: 3px;
 }

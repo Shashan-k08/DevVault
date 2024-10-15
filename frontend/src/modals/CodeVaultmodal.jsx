@@ -80,13 +80,14 @@ const CodeVaultmodal = (props) => {
                   value={language}
                   onChange={(e) => setLanguage(e.target.value)}
                 >
-                  <option value="C++">C++</option>
+                  <option value="C++">C/C++</option>
                   <option value="Java">Java</option>
                   <option value="Python">Python</option>
+                  <option value="Javascript">Javascript</option>
                   <option value="React.js">React.js</option>
                   <option value="Express.js">Express.js</option>
-                  <option value="HTML">HTML</option>
-                  <option value="option3">CSS</option>
+                  <option value="HTML">HTML5</option>
+                  <option value="CSS">CSS3</option>
                 </Select>
               </FormControl>
             </Flex>
