@@ -37,7 +37,7 @@ const AddNote = (props) => {
                         <input type="text" className="form-control" id="description" value={note.description} name="description" onChange={onChange} />
                     </div>
                   
-                    <button type="submit" disabled={note.title.length < 5 || note.description.length < 5} className="btn btn-primary" onClick={handleclick}>Submit</button>
+                    <button type="submit" style={{width:"max-content",margin:"auto",cursor:"pointer"}} disabled={note.title.length < 5 || note.description.length < 5} className="btn btn-primary" onClick={handleclick}>Submit</button>
                 </form>
             </div>
         </div>

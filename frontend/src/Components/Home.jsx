@@ -29,12 +29,7 @@ const Home = () => {
       description: "Effortlessly format C++, Java, and Python code",
       path: "/devVault/codeFormatter",
     },
-    {
-      name: "RegexBuilder",
-      description:
-        "Create, test, and refine your regular expressions with ease.",
-      path: "/devVault/regexBuilder",
-    },
+   
     {
       name: "Text Prettier",
       description: "Seamlessly format and clean up your text.",
@@ -49,6 +44,12 @@ const Home = () => {
       name: "SafeKeep",
       description: "Keep The Important documents Securely",
       path: "/devVault/safeKeep",
+    },
+    {
+      name: "RegexBuilder",
+      description:
+        "Create, test, and refine your regular expressions with ease.",
+      path: "/devVault/regexBuilder",
     },
   ];
 

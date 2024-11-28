@@ -21,6 +21,7 @@ import Newnote from './Components/Newnote';
 import CodeVault from './Pages/codeVault/CodeVault';
 import CodeFormatter from './Pages/codeFormatter/CodeFormatter';
 import TextPrettier from './Pages/textPrettier/TextPrettier';
+import ComingSoon from './Components/ComingSoon';
 
 function App() {
   const [alert, setalert] = useState(null);
@@ -49,10 +50,12 @@ function App() {
               <Route exact path='/login' element={<Login showalert={showalert} />} />
               <Route exact path='/signup' element={<SignUp showalert={showalert} />} />
               <Route exact path='/footer' element={<Footer showalert={showalert} />} />
-              <Route exact path='/newnote' element={<Newnote showalert={showalert} />} />
+              <Route exact path='/devVault/noteSafe' element={<Newnote showalert={showalert} />} />
               <Route exact path='/devVault/codeVault' element={<CodeVault/>} />
               <Route exact path='/devVault/codeFormatter' element={<CodeFormatter/>} />
               <Route exact path='/devVault/textPrettier' element={<TextPrettier/>} />
+              <Route exact path='/devVault/regexBuilder' element={<ComingSoon/>} />
+              <Route exact path='/devVault/safeKeep' element={<ComingSoon/>} />
 
             </Routes>
           </div>

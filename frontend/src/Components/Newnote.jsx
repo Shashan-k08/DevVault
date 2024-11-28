@@ -3,7 +3,7 @@ import Notes from './Notes'
 
 const Newnote = (props) => {
   return (
-    <div>
+    <div style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
         <Notes showalert={props.showalert} />
 
     </div>
