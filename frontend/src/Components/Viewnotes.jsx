@@ -87,8 +87,8 @@ const Viewnotes = (props) => {
                 </div>
 
 
-                <h2>Your notes</h2>
-                <div className="container"> {notes.length === 0 && "No notes to display"}</div>
+                <h3 style={{marginTop:"2rem"}}>Your notes</h3>
+                <div className="container"> {notes.length === 0 && "No notes to display...."}</div>
                 {
                     notes.map((note) => {
                         return <Noteitem key={note._id} updateNote={updateNote} showalert={props.showalert} note={note} />

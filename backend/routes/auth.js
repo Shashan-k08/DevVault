@@ -54,9 +54,9 @@ router.post(
         );
 
         var mailOptions = {
-          from: "Shashank",
+          from: "DevVault",
           to: email,
-          subject: "iNotebook",
+          subject: "Welcome on DevVault",
           html: `Hello <b>${name}</b>, <br>Thank you for Joining Us <br/>We are here to provide best service to you <br/> <br/> <br/><b>Team iNotebook </b>`,
         };
 
@@ -142,9 +142,9 @@ router.post(
         );
 
         var mailOptions = {
-          from: "Shashank",
+          from: "DevVault",
           to: email,
-          subject: "iNotebook",
+          subject: "New login",
           html: `Hello <b>${name}</b>, <br> A new device has logged in into your account <br/> <br/> <br/> Thanks <br/><b>Team iNotebook </b>`,
         };
 
