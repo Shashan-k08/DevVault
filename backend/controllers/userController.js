@@ -82,7 +82,7 @@ const userLogin = async (req, res) => {
     sendMail(
       req.body.email,
       "New login",
-      `Hello <b>${req.body.name}</b>, <br> A new device has logged in into your account <br/> <br/> <br/> Thanks <br/><b>Team DevVault </b>`
+      `Hello <b>${user.name}</b>, <br> A new device has logged in into your account <br/> <br/> <br/> Thanks <br/><b>Team DevVault </b>`
     );
     const data = {
       user: {

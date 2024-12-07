@@ -1,9 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
-import loginimg from "../img/virtual-reality 1.jpg";
+import loginimg from "../img/dev_img_2.jpeg";
 import useCustomToast from "../hooks/toast.hook";
 import userContext from "../context/user/userContext";
+import Spinner from "./Spinner";
+
 const SignUp = (props) => {
   const [credentials, setcredentials] = useState({
     name: "",
@@ -15,12 +17,15 @@ const SignUp = (props) => {
   const context = useContext(userContext);
   const { userSignUp } = context;
   const { successToast, errorToast } = useCustomToast();
+  const [loading, setloading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setloading(true);
     const { name, email, password } = credentials;
     const json = await userSignUp(name, email, password);
     console.log(json);
+    setloading(false);
     // save the verification token and redirect
     if (json.success) {
       localStorage.setItem("token", json.verificationtoken);
@@ -29,13 +34,12 @@ const SignUp = (props) => {
         title: "Success",
         description: "Your account have been created Successfully.",
       });
-      //props.showalert("Account created Successfully", "success")
     } else {
+      console.log(json);
       errorToast({
         title: "Invalid Credentials",
-        description: "Please create account using valid Credentials.",
+        description: json.error,
       });
-      // props.showalert("Invalid Credentials", "danger");
     }
   };
   const onchange = (e) => {
@@ -48,10 +52,15 @@ const SignUp = (props) => {
 
   return (
     <div className="conatiner fl-c">
-      <div className="signup-box">
-        <div className="signup-box1 fl-r">
-          <img className="img-box" src={loginimg} alt="" />
-          <form className="form-box fl-c">
+      {loading && <Spinner />}
+      <div className={loading ? "signup-box opac" : "signup-box"}>
+        <div className="signup-box1">
+          <img
+            className={loading ? "img-box" : "img-box"}
+            src={loginimg}
+            alt=""
+          />
+          <form className="signUpForm-box fl-c">
             <h4>Sign-Up</h4>
             <div class="">
               <label class="form-label" htmlFor="form4Example1">
@@ -63,8 +72,7 @@ const SignUp = (props) => {
                 id="form4Example1"
                 onChange={onchange}
                 value={credentials.name}
-                class="form-control"
-                style={{width:"15rem",fontSize:"15px"}}
+                className="auth-input form-control"
               />
             </div>
             <div class="">
@@ -76,8 +84,7 @@ const SignUp = (props) => {
                 name="email"
                 id="form1Example1"
                 onChange={onchange}
-                class="form-control"
-                style={{width:"15rem",fontSize:"15px"}}
+                className="auth-input form-control"
               />
             </div>
             <div class="">
@@ -89,41 +96,11 @@ const SignUp = (props) => {
                 name="password"
                 id="form1Example2"
                 onChange={onchange}
-                class="form-control"
-                style={{width:"15rem",fontSize:"15px"}}
+                className="auth-input form-control"
               />
             </div>
-            <div class="">
-              <label class="form-label" for="form2Example2">
-                {" "}
-                Confirm Password
-              </label>
-              <input
-                type="password"
-                name="cpassword"
-                id="form2Example2"
-                class="form-control"
-                style={{width:"15rem",fontSize:"15px"}}
-              />
-            </div>
-            <div class="row mb-4">
-              <div class="col d-flex justify-content-center">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="form1Example3"
-                    checked
-                    
-                  />
-                  <label class="form-check-label" for="form1Example3">
-                    {" "}
-                    Remember me{" "}
-                  </label>
-                </div>
-              </div>
 
+            <div class="row mb-4">
               <div class="col">
                 <a href="#!">Forgot password?</a>
               </div>
