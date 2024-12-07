@@ -8,7 +8,7 @@ const UserState = (props) => {
   const host = "https://inotebook-id7a.onrender.com";
 
   const loginUser = async (email, password) => {
-    const response = await fetch(`${host}/api/auth/login`, {
+    const response = await fetch(`${host}/api/auth/devVault/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,7 +21,7 @@ const UserState = (props) => {
   };
 
   const userSignUp = async (name, email, password) => {
-    const response = await fetch(`${host}/api/auth/createuser`, {
+    const response = await fetch(`${host}/api/auth/devVault/createUser`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
