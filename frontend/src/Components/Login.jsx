@@ -48,10 +48,10 @@ const Login = (props) => {
     <div className="conatiner fl-c">
       {loading && <Spinner />}
 
-      <div className={loading ? "login-box" : "login-box"}>
+      <div className={loading ? "login-box opac" : "login-box"}>
         <div className="signup-box1">
           <img
-            className={loading ? "img-box opac" : "img-box"}
+            className={loading ? "img-box " : "img-box"}
             src={loginimg}
             alt=""
           />
